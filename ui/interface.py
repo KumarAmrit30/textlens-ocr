@@ -80,24 +80,24 @@ def create_interface():
                     elem_classes=["tips-section"]
                 )
         
-        # Usage instructions
-        with gr.Row():
-            gr.Markdown("""
-                ### 🔧 How to Use
+        # # Usage instructions
+        # with gr.Row():
+        #     gr.Markdown("""
+        #         ### 🔧 How to Use
                 
-                1. **Upload an Image**: Drag and drop, use webcam, or paste from clipboard
-                2. **Extract Text**: Click the "Extract Text" button or text extraction will start automatically
-                3. **Copy Results**: Use the copy button to copy extracted text
-                4. **Try Different Images**: Upload multiple images to test various scenarios
+        #         1. **Upload an Image**: Drag and drop, use webcam, or paste from clipboard
+        #         2. **Extract Text**: Click the "Extract Text" button or text extraction will start automatically
+        #         3. **Copy Results**: Use the copy button to copy extracted text
+        #         4. **Try Different Images**: Upload multiple images to test various scenarios
                 
-                ### ⚡ Features
+        #         ### ⚡ Features
                 
-                - **Vision-Language Model**: Uses Microsoft Florence-2 for accurate text recognition
-                - **Multiple Input Methods**: Upload files, use webcam, or paste from clipboard  
-                - **Auto-Processing**: Text extraction starts automatically when you upload an image
-                - **GPU Acceleration**: Automatically uses GPU if available for faster processing
-                - **Copy Functionality**: Easy one-click copying of extracted text
-                """, elem_classes=["instructions-section"])
+        #         - **Vision-Language Model**: Uses Microsoft Florence-2 for accurate text recognition
+        #         - **Multiple Input Methods**: Upload files, use webcam, or paste from clipboard  
+        #         - **Auto-Processing**: Text extraction starts automatically when you upload an image
+        #         - **GPU Acceleration**: Automatically uses GPU if available for faster processing
+        #         - **Copy Functionality**: Easy one-click copying of extracted text
+        #         """, elem_classes=["instructions-section"])
         
         # Event handlers
         image_input.upload(
