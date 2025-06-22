@@ -103,13 +103,15 @@ def create_interface():
         image_input.upload(
             fn=extract_text_from_image,
             inputs=image_input,
-            outputs=text_output
+            outputs=text_output,
+            api_name="extract_on_upload"
         )
         
         extract_btn.click(
             fn=extract_text_from_image,
             inputs=image_input,
-            outputs=text_output
+            outputs=text_output,
+            api_name="extract_on_click"
         )
         
         refresh_status_btn.click(
