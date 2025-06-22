@@ -36,7 +36,7 @@ def main():
             interface.launch(
                 share=False,
                 server_name="0.0.0.0",
-                server_port=7861,
+                server_port=7860,
                 show_error=True,
                 favicon_path=None,
                 ssl_verify=False

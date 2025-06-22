@@ -41,6 +41,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+textlens_env/
 
 # IDE
 .vscode/

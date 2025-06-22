@@ -77,7 +77,7 @@ textlens-ocr/
    ```
 
 5. **Open your browser**
-   Navigate to `http://localhost:7861`
+   Navigate to `http://localhost:7860`
 
 ### Quick Test
 
@@ -215,7 +215,7 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 COPY . .
-EXPOSE 7861
+EXPOSE 7860
 
 CMD ["python", "app.py"]
 ```
@@ -225,14 +225,14 @@ CMD ["python", "app.py"]
 ```bash
 # Production server
 pip install gunicorn
-gunicorn -w 4 -b 0.0.0.0:7861 app:create_interface().app
+gunicorn -w 4 -b 0.0.0.0:7860 app:create_interface().app
 ```
 
 ## 🔐 Environment Variables
 
 | Variable               | Description           | Default                |
 | ---------------------- | --------------------- | ---------------------- |
-| `GRADIO_SERVER_PORT`   | Server port           | 7861                   |
+| `GRADIO_SERVER_PORT`   | Server port           | 7860                   |
 | `TRANSFORMERS_CACHE`   | Model cache directory | `~/.cache/huggingface` |
 | `CUDA_VISIBLE_DEVICES` | GPU device selection  | All available          |
 
