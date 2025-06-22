@@ -1,0 +1,64 @@
+name: Sync to HuggingFace Spaces
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch: # Allow manual triggering
+
+env:
+  HF_SPACE_NAME: "textlens-ocr" # Change this to your Space name if different
+
+jobs:
+  sync-to-huggingface:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      - name: Install HuggingFace Hub
+        run: |
+          pip install huggingface_hub
+
+      - name: Setup Git
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+
+      - name: Get HuggingFace username
+        id: hf_user
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          # Get username from HuggingFace API
+          python -c "
+          from huggingface_hub import HfApi
+          import os
+          api = HfApi(token=os.environ['HF_TOKEN'])
+          user = api.whoami()
+          print(f\"HF_USERNAME={user['name']}\")
+          " >> $GITHUB_OUTPUT
+
+      - name: Push to HuggingFace Spaces
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_USERNAME: ${{ steps.hf_user.outputs.HF_USERNAME }}
+        run: |
+          # Create the HuggingFace Space URL
+          HF_SPACE_URL="https://huggingface.co/spaces/${HF_USERNAME}/${HF_SPACE_NAME}"
+
+          echo "Syncing to: $HF_SPACE_URL"
+
+          # Push to HuggingFace Spaces
+          git push --force https://user:$HF_TOKEN@huggingface.co/spaces/${HF_USERNAME}/${HF_SPACE_NAME} HEAD:main
+
+          echo "✅ Successfully synced to HuggingFace Spaces!"
+          echo "🚀 Your Space will be available at: $HF_SPACE_URL"
