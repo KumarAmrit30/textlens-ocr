@@ -33,14 +33,17 @@ textlens-ocr/
 ├── app.py                 # Main Gradio application
 ├── requirements.txt       # Python dependencies
 ├── README.md             # Project documentation
-├── test_ocr.py           # Test suite
 ├── models/               # OCR processing modules
 │   ├── __init__.py
 │   └── ocr_processor.py  # Advanced OCR class with fallbacks
 ├── utils/                # Utility functions
 │   ├── __init__.py
 │   └── image_utils.py    # Image preprocessing utilities
-└── textlens_env/         # Virtual environment
+└── ui/                   # User interface components
+    ├── __init__.py
+    ├── interface.py      # Gradio interface
+    ├── handlers.py       # Event handlers
+    └── styles.py         # CSS styling
 ```
 
 ## 🚀 Quick Start
@@ -50,7 +53,7 @@ textlens-ocr/
 1. **Clone the repository**
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/KumarAmrit30/textlens-ocr.git
    cd textlens-ocr
    ```
 
