@@ -50,15 +50,15 @@ def create_interface():
                     size="lg"
                 )
                 
-                gr.Markdown("### 📖 Try with examples:", elem_classes=["markdown-text"])
-                gr.Markdown("""
-                    **Try uploading an image with text:**
-                    • Screenshots of documents
-                    • Photos of signs or billboards
-                    • Handwritten notes  
-                    • Menu cards or receipts
-                    • Book pages or articles
-                """, elem_classes=["markdown-text"])
+                # gr.Markdown("### 📖 Try with examples:", elem_classes=["markdown-text"])
+                # gr.Markdown("""
+                #     **Try uploading an image with text:**
+                #     • Screenshots of documents
+                #     • Photos of signs or billboards
+                #     • Handwritten notes  
+                #     • Menu cards or receipts
+                #     • Book pages or articles
+                # """, elem_classes=["markdown-text"])
             
             with gr.Column(scale=1):
                 gr.Markdown("### 📝 Extracted Text", elem_classes=["markdown-text"])
@@ -70,15 +70,15 @@ def create_interface():
                     show_copy_button=True
                 )
                 
-                gr.Markdown("""
-                    **💡 Tips:**
-                    - Higher resolution images generally give better results
-                    - Ensure text is clearly visible and not blurry
-                    - The model works best with printed text but also supports handwriting
-                    - First-time model loading may take 2-3 minutes
-                    """,
-                    elem_classes=["tips-section"]
-                )
+                # gr.Markdown("""
+                #     **💡 Tips:**
+                #     - Higher resolution images generally give better results
+                #     - Ensure text is clearly visible and not blurry
+                #     - The model works best with printed text but also supports handwriting
+                #     - First-time model loading may take 2-3 minutes
+                #     """,
+                #     elem_classes=["tips-section"]
+                # )
         
         # # Usage instructions
         # with gr.Row():
