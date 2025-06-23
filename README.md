@@ -4,7 +4,7 @@ emoji: 🔍
 colorFrom: blue
 colorTo: purple
 sdk: gradio
-sdk_version: 4.0.0
+sdk_version: 4.44.0
 app_file: app.py
 pinned: false
 license: mit
@@ -18,33 +18,32 @@ license: mit
 [![Gradio](https://img.shields.io/badge/gradio-4.44+-orange.svg)](https://gradio.app/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
-A modern OCR (Optical Character Recognition) application powered by Microsoft's Florence-2 Vision-Language Model. Built with Gradio for an intuitive web interface, TextLens extracts text from images with high accuracy and supports multiple input methods.
+A modern, streamlined OCR application powered by state-of-the-art vision-language models. Built with a simple, fast architecture for high-performance text extraction from images.
 
 ## 🚀 Live Demo: [Textlens](https://huggingface.co/spaces/GoConqurer/textlens-ocr)
 
-## Features
+## ✨ Features
 
-### 🤖 Advanced OCR Capabilities
+### 🤖 Three Powerful OCR Models
 
-- **Microsoft Florence-2 Integration**: Uses state-of-the-art vision-language models (Florence-2-base and Florence-2-large)
-- **Intelligent Fallback System**: Automatically falls back to EasyOCR if Florence-2 fails to load
-- **Multi-Device Support**: Automatic detection and usage of CUDA, MPS (Apple Silicon), or CPU
-- **High Accuracy**: Optimized for various text types including documents, signs, and handwritten notes
+- **🔥 Nanonets-OCR-s**: State-of-the-art image-to-markdown OCR with intelligent content recognition
+- **🚀 Qwen2-VL-OCR-2B-Instruct**: Fast general-purpose OCR optimized for speed and accuracy
+- **📄 RolmOCR**: Specialized for complex documents, scanned text, and structured layouts
 
-### 🎨 User-Friendly Interface
+### ⚡ Performance Optimized
 
-- **Modern Gradio UI**: Clean, responsive web interface
-- **Multiple Input Methods**: Upload files, use webcam, or paste from clipboard
-- **Real-time Processing**: Instant text extraction upon image upload
-- **Copy-to-Clipboard**: One-click copying of extracted text
-- **Status Monitoring**: Real-time model loading and processing status
+- **Single-file Architecture**: Streamlined for maximum performance
+- **GPU Acceleration**: CUDA and MPS support with @spaces.GPU optimization
+- **Real-time Streaming**: Live text generation with immediate results
+- **Smart Model Loading**: Models loaded once at startup and kept in memory
 
-### ⚡ Performance & Reliability
+### 🎨 Modern Interface
 
-- **GPU Acceleration**: Supports CUDA and MPS for faster inference
-- **Smart Resource Management**: Efficient model loading and memory cleanup
-- **Error Handling**: Graceful degradation with informative error messages
-- **Format Support**: JPEG, PNG, WEBP, BMP, TIFF, and GIF images
+- **Clean Gradio UI**: Beautiful, responsive web interface
+- **Model Selection**: Choose the best OCR model for your task
+- **Advanced Options**: Fine-tune generation parameters (temperature, top-p, etc.)
+- **Multiple Input Methods**: Upload files, paste from clipboard
+- **One-click Copy**: Easy copying of extracted text
 
 ## 🚀 Quick Start
 

@@ -22,7 +22,57 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.9"
+          python-version: "3.11"
+
+      - name: Validate project structure
+        run: |
+          echo "🔍 Validating project structure..."
+
+          # Check if main files exist
+          if [ ! -f "app.py" ]; then
+            echo "❌ app.py not found!"
+            exit 1
+          fi
+
+          if [ ! -f "requirements.txt" ]; then
+            echo "❌ requirements.txt not found!"
+            exit 1
+          fi
+
+          if [ ! -f "README.md" ]; then
+            echo "❌ README.md not found!"
+            exit 1
+          fi
+
+          # Check if old structure was removed
+          if [ -d "models" ] || [ -d "ui" ] || [ -d "utils" ]; then
+            echo "❌ Old modular structure still exists! Clean up required."
+            exit 1
+          fi
+
+          echo "✅ Project structure validated!"
+          echo "📊 Single-file architecture confirmed"
+
+      - name: Install dependencies and validate
+        run: |
+          echo "📦 Installing dependencies..."
+          pip install -r requirements.txt
+
+          echo "🔍 Validating Python syntax..."
+          python -m py_compile app.py
+
+          echo "📋 Checking imports..."
+          python -c "
+          try:
+              import gradio as gr
+              import torch
+              import transformers
+              import spaces
+              print('✅ All required packages available')
+          except ImportError as e:
+              print(f'❌ Import error: {e}')
+              exit(1)
+          "
 
       - name: Install HuggingFace Hub
         run: |
@@ -55,10 +105,13 @@ jobs:
           # Create the HuggingFace Space URL
           HF_SPACE_URL="https://huggingface.co/spaces/${HF_USERNAME}/${HF_SPACE_NAME}"
 
-          echo "Syncing to: $HF_SPACE_URL"
+          echo "🚀 Syncing to: $HF_SPACE_URL"
+          echo "📁 Architecture: Single-file streamlined approach"
+          echo "🤖 Models: Nanonets-OCR-s, Qwen2-VL-OCR-2B, RolmOCR"
 
           # Push to HuggingFace Spaces
           git push --force https://user:$HF_TOKEN@huggingface.co/spaces/${HF_USERNAME}/${HF_SPACE_NAME} HEAD:main
 
           echo "✅ Successfully synced to HuggingFace Spaces!"
           echo "🚀 Your Space will be available at: $HF_SPACE_URL"
+          echo "⚡ New streamlined architecture deployed!"
