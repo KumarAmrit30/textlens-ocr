@@ -1,5 +1,6 @@
 # Core ML dependencies for OCR models
 torch>=2.0.0
+torchvision>=0.15.0
 transformers>=4.44.0
 accelerate>=0.20.0
 sentencepiece>=0.1.97
