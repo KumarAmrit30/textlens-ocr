@@ -16,7 +16,7 @@ def initialize_ocr_processor():
     global ocr_processor
     try:
         logger.info("Initializing OCR processor...")
-        ocr_processor = OCRProcessor(model_name="microsoft/Florence-2-base")
+        ocr_processor = OCRProcessor(model_name="microsoft/Florence-2-large")
         return True
     except Exception as e:
         logger.error(f"Failed to initialize OCR processor: {str(e)}")

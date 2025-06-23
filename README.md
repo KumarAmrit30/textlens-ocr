@@ -15,76 +15,76 @@ license: mit
 [![Deploy to HuggingFace](https://img.shields.io/badge/🤗-Deploy%20to%20Spaces-blue)](https://huggingface.co/spaces/GoConqurer/textlens-ocr)
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-green)](https://github.com/KumarAmrit30/textlens-ocr)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![Gradio](https://img.shields.io/badge/gradio-4.44+-orange.svg)](https://gradio.app/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A state-of-the-art Vision-Language Model (VLM) based OCR application that extracts text from images using Microsoft Florence-2 with intelligent fallback systems and enterprise-grade zero downtime deployment.
+A modern OCR (Optical Character Recognition) application powered by Microsoft's Florence-2 Vision-Language Model. Built with Gradio for an intuitive web interface, TextLens extracts text from images with high accuracy and supports multiple input methods.
 
-## 🚀 Live Demo
+## 🚀 Live Demo: [Textlens](https://huggingface.co/spaces/GoConqurer/textlens-ocr)
 
-**🔗 Try it now:** [https://huggingface.co/spaces/GoConqurer/textlens-ocr](https://huggingface.co/spaces/GoConqurer/textlens-ocr)
+## Features
 
-![TextLens Demo](https://img.shields.io/badge/Demo-Live-brightgreen)
+### 🤖 Advanced OCR Capabilities
 
-## ✨ Key Features
+- **Microsoft Florence-2 Integration**: Uses state-of-the-art vision-language models (Florence-2-base and Florence-2-large)
+- **Intelligent Fallback System**: Automatically falls back to EasyOCR if Florence-2 fails to load
+- **Multi-Device Support**: Automatic detection and usage of CUDA, MPS (Apple Silicon), or CPU
+- **High Accuracy**: Optimized for various text types including documents, signs, and handwritten notes
 
-### 🤖 Advanced AI-Powered OCR
+### 🎨 User-Friendly Interface
 
-- **Microsoft Florence-2 VLM**: State-of-the-art vision-language model for text extraction
-- **Intelligent Fallback System**: Automatic fallback to EasyOCR if primary model fails
-- **Multi-Model Support**: Florence-2-base and Florence-2-large variants
-- **Real-time Processing**: Instant text extraction on image upload
-
-### 🎨 Modern User Experience
-
-- **Clean UI**: Professional Gradio interface with intuitive design
+- **Modern Gradio UI**: Clean, responsive web interface
 - **Multiple Input Methods**: Upload files, use webcam, or paste from clipboard
-- **Copy-to-Clipboard**: One-click text copying functionality
-- **Responsive Design**: Works seamlessly on desktop and mobile devices
-- **Dark/Light Theme**: Automatic theme adaptation
+- **Real-time Processing**: Instant text extraction upon image upload
+- **Copy-to-Clipboard**: One-click copying of extracted text
+- **Status Monitoring**: Real-time model loading and processing status
 
 ### ⚡ Performance & Reliability
 
-- **GPU Acceleration**: Supports CUDA, MPS (Apple Silicon), and CPU inference
-- **Smart Device Detection**: Automatically uses best available hardware
-- **Error Resilience**: Robust error handling with graceful degradation
-- **Memory Optimization**: Efficient model loading and cleanup
-
-### 🛡️ Enterprise Features
-
-- **Zero Downtime Deployment**: Blue-green deployment with health checks
-- **Health Monitoring**: Built-in `/health` and `/ready` endpoints
-- **Graceful Shutdown**: Signal handling for clean application restarts
-- **Production Ready**: Scalable architecture with automated deployment
-
+- **GPU Acceleration**: Supports CUDA and MPS for faster inference
+- **Smart Resource Management**: Efficient model loading and memory cleanup
+- **Error Handling**: Graceful degradation with informative error messages
+- **Format Support**: JPEG, PNG, WEBP, BMP, TIFF, and GIF images
 
 ## 🚀 Quick Start
 
-### 🌐 Online (Recommended)
+### 📋 Prerequisites
 
-**Instant access** - No installation required:
-👉 [**Launch TextLens**](https://huggingface.co/spaces/GoConqurer/textlens-ocr)
+- Python 3.9 or higher
+- pip (Python package installer)
+- Optional: CUDA-compatible GPU for faster processing
 
-### 💻 Local Development
+### 💻 Installation
 
-1. **Clone Repository**
+1. **Clone the Repository**
 
    ```bash
    git clone https://github.com/KumarAmrit30/textlens-ocr.git
    cd textlens-ocr
    ```
 
-2. **Setup Environment**
+2. **Create Virtual Environment** (Recommended)
 
    ```bash
    python -m venv textlens_env
-   source textlens_env/bin/activate  # Windows: textlens_env\Scripts\activate
+   source textlens_env/bin/activate  # On Windows: textlens_env\Scripts\activate
+   ```
+
+3. **Install Dependencies**
+
+   ```bash
    pip install -r requirements.txt
    ```
 
-3. **Launch Application**
+4. **Launch the Application**
+
    ```bash
    python app.py
    ```
-   🌐 Open: `http://localhost:7860`
+
+5. **Access the Interface**
+   - Open your web browser and navigate to: `http://localhost:7860`
+   - The interface will be ready to use immediately
 
 ### 🧪 Quick Test
 
@@ -93,165 +93,180 @@ A state-of-the-art Vision-Language Model (VLM) based OCR application that extrac
 python -c "from models.ocr_processor import OCRProcessor; print('✅ TextLens ready!')"
 ```
 
-## 📊 Model Performance
+## 📁 Project Structure
 
-| Model                | Size  | Speed     | Accuracy     | Best For               |
-| -------------------- | ----- | --------- | ------------ | ---------------------- |
-| **Florence-2-base**  | 270M  | ⚡ Fast   | 📈 High      | General OCR, Real-time |
-| **Florence-2-large** | 770M  | 🐌 Medium | 📊 Very High | High accuracy needs    |
-| **EasyOCR**          | ~100M | 🚀 Medium | 📋 Good      | Fallback, Multilingual |
-
-## 🎯 Supported Use Cases
-
-| Category            | Examples                        | Performance |
-| ------------------- | ------------------------------- | ----------- |
-| 📄 **Documents**    | PDFs, Scanned papers, Forms     | ⭐⭐⭐⭐⭐  |
-| 🧾 **Receipts**     | Shopping receipts, Invoices     | ⭐⭐⭐⭐    |
-| 📱 **Screenshots**  | App interfaces, Error messages  | ⭐⭐⭐⭐⭐  |
-| 🚗 **Vehicle**      | License plates, VIN numbers     | ⭐⭐⭐⭐    |
-| 📚 **Books**        | Printed text, Handwritten notes | ⭐⭐⭐⭐    |
-| 🌐 **Multilingual** | Multiple languages              | ⭐⭐⭐      |
+```
+textlens-ocr/
+├── app.py                    # Main application entry point
+├── requirements.txt          # Python dependencies
+├── models/
+│   ├── __init__.py
+│   └── ocr_processor.py     # Florence-2 OCR processing logic
+├── ui/
+│   ├── __init__.py
+│   ├── interface.py         # Gradio interface setup
+│   ├── handlers.py          # Event handlers and processing logic
+│   └── styles.py            # Custom CSS styling
+└── utils/
+    ├── __init__.py
+    └── image_utils.py       # Image preprocessing utilities
+```
 
 ## 🔧 Configuration
 
-### 🎛️ Model Selection
+### Model Selection
+
+The application supports two Florence-2 model variants:
 
 ```python
-from models.ocr_processor import OCRProcessor
+# Fast inference (default)
+OCRProcessor(model_name="microsoft/Florence-2-base")    # ~270M parameters
 
-# Fast inference (recommended)
-ocr = OCRProcessor(model_name="microsoft/Florence-2-base")
-
-# Maximum accuracy
-ocr = OCRProcessor(model_name="microsoft/Florence-2-large")
+# Higher accuracy
+OCRProcessor(model_name="microsoft/Florence-2-large")   # ~770M parameters
 ```
 
-### 🎨 UI Customization
+### Environment Variables
 
-Modify `ui/styles.py` to customize appearance:
+| Variable               | Description                          | Default                |
+| ---------------------- | ------------------------------------ | ---------------------- |
+| `SPACE_ID`             | HuggingFace Space ID (auto-detected) | None                   |
+| `TRANSFORMERS_CACHE`   | Model cache directory                | `~/.cache/huggingface` |
+| `CUDA_VISIBLE_DEVICES` | GPU selection                        | All available          |
 
-```python
-# Change color scheme
-PRIMARY_COLOR = "#1f77b4"
-SECONDARY_COLOR = "#ff7f0e"
+## 📊 Model Performance
 
-# Update layout
-INTERFACE_WIDTH = "100%"
+| Model                  | Size  | Speed     | Accuracy     | Best For               |
+| ---------------------- | ----- | --------- | ------------ | ---------------------- |
+| **Florence-2-base**    | 270M  | ⚡ Fast   | 📈 High      | General OCR, Real-time |
+| **Florence-2-large**   | 770M  | 🐌 Medium | 📊 Very High | Maximum accuracy       |
+| **EasyOCR** (Fallback) | ~100M | 🚀 Medium | 📋 Good      | Backup, Multilingual   |
+
+## 🎯 Supported Use Cases
+
+- 📄 **Documents**: PDFs, scanned papers, forms, contracts
+- 🧾 **Receipts**: Shopping receipts, invoices, bills
+- 📱 **Screenshots**: App interfaces, error messages, code snippets
+- 🚗 **Signs**: Street signs, license plates, billboards
+- 📚 **Books**: Printed text, handwritten notes, articles
+- 🌐 **Multi-language**: Various languages (with EasyOCR fallback)
+
+## 💡 Usage Tips
+
+1. **Image Quality**: Higher resolution images generally produce better results
+2. **Text Clarity**: Ensure text is clearly visible and not blurry
+3. **Lighting**: Good lighting improves text recognition accuracy
+4. **First Run**: Initial model download may take 2-3 minutes
+5. **GPU Usage**: CUDA/MPS acceleration significantly improves performance
+
+## 🔍 Technical Details
+
+### Dependencies
+
+- **torch**: PyTorch for deep learning operations
+- **transformers**: HuggingFace Transformers for Florence-2 models
+- **gradio**: Web interface framework
+- **pillow**: Image processing
+- **easyocr**: Fallback OCR engine
+- **accelerate**: Hardware acceleration support
+
+### Hardware Requirements
+
+- **Minimum**: 4GB RAM, CPU
+- **Recommended**: 8GB+ RAM, CUDA-compatible GPU
+- **Optimal**: 16GB+ RAM, Modern GPU (RTX 30/40 series, etc.)
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+**1. Model Loading Fails**
+
+```bash
+# Clear cache and retry
+rm -rf ~/.cache/huggingface/transformers/
+python app.py
 ```
 
-### ⚙️ Environment Variables
+**2. GPU Not Detected**
 
-| Variable               | Description          | Default                |
-| ---------------------- | -------------------- | ---------------------- |
-| `SPACE_ID`             | HuggingFace Space ID | Auto-detected          |
-| `DEPLOYMENT_STAGE`     | deployment stage     | `production`           |
-| `TRANSFORMERS_CACHE`   | Model cache path     | `~/.cache/huggingface` |
-| `CUDA_VISIBLE_DEVICES` | GPU selection        | All available          |
-
-
-
-**Deployment Flow:**
-
-```mermaid
-graph LR
-    A[Code Push] --> B[Validate]
-    B --> C[Deploy Staging]
-    C --> D[Health Check]
-    D --> E[Deploy Production]
-    E --> F[Verify]
-    F --> G[Complete ✅]
+```bash
+# Check CUDA installation
+python -c "import torch; print(torch.cuda.is_available())"
 ```
+
+**3. Memory Issues**
+
+- Try using Florence-2-base instead of Florence-2-large
+- Close other applications to free up RAM
+- Restart the application
+
+**4. Network Issues**
+
+- Ensure stable internet connection for model download
+- Check firewall/proxy settings
 
 ## 🤝 Contributing
 
 We welcome contributions! Here's how to get started:
 
-### 🔧 Development Setup
-
-1. **Fork & Clone**
+1. **Fork the Repository**
 
    ```bash
    git clone https://github.com/YOUR_USERNAME/textlens-ocr.git
    cd textlens-ocr
    ```
 
-2. **Create Branch**
+2. **Create a Feature Branch**
 
    ```bash
    git checkout -b feature/your-feature-name
    ```
 
-3. **Make Changes**
+3. **Make Your Changes**
 
    - Add new features or fix bugs
-   - Update tests and documentation
-   - Follow code style guidelines
+   - Follow the existing code style
+   - Test your changes thoroughly
 
-4. **Test Changes**
-
-   ```bash
-   python -m pytest tests/
-   python -c "from models.ocr_processor import OCRProcessor; OCRProcessor()"
-   ```
-
-5. **Submit PR**
+4. **Submit a Pull Request**
    ```bash
    git add .
    git commit -m "feat: add your feature description"
    git push origin feature/your-feature-name
    ```
 
-### 📝 Contribution Guidelines
+### Development Setup
 
-- **Code Style**: Follow PEP 8, use Black formatter
-- **Documentation**: Update README and docstrings
-- **Tests**: Add tests for new functionality
-- **Commits**: Use conventional commit messages
-- **Issues**: Link PRs to relevant issues
+```bash
+# Install development dependencies
+pip install -r requirements.txt
+
+# Run tests (if available)
+python -m pytest tests/
+
+# Check code style
+flake8 . --exclude=textlens_env
+```
 
 ## 📄 License
 
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-### 🙏 Third-Party Licenses
+## 🙏 Acknowledgments
 
-- **Microsoft Florence-2**: [MIT License](https://github.com/microsoft/Florence)
-- **HuggingFace Transformers**: [Apache License 2.0](https://github.com/huggingface/transformers)
-- **Gradio**: [Apache License 2.0](https://github.com/gradio-app/gradio)
-- **EasyOCR**: [Apache License 2.0](https://github.com/JaidedAI/EasyOCR)
+- **Microsoft**: For the Florence-2 vision-language models
+- **HuggingFace**: For the Transformers library and model hosting
+- **Gradio**: For the web interface framework
+- **EasyOCR**: For the reliable fallback OCR engine
 
-## 🌟 Acknowledgments
+## 📞 Support
 
-Special thanks to:
+If you encounter any issues or have questions:
 
-- **Microsoft Research** for the incredible Florence-2 vision-language model
-- **HuggingFace** for the transformers library and Spaces platform
-- **Gradio Team** for the amazing web interface framework
-- **JaidedAI** for EasyOCR fallback capabilities
-- **Open Source Community** for continuous support and contributions
-
-## 📈 Project Status
-
-| Component         | Status        | Version |
-| ----------------- | ------------- | ------- |
-| **Core OCR**      | ✅ Stable     | v1.0.0  |
-| **Web UI**        | ✅ Stable     | v1.0.0  |
-| **Deployment**    | ✅ Production | v1.0.0  |
-| **API**           | ✅ Stable     | v1.0.0  |
-| **Documentation** | ✅ Complete   | v1.0.0  |
-
-### 📊 Stats
-
-![GitHub stars](https://img.shields.io/github/stars/KumarAmrit30/textlens-ocr?style=social)
-![GitHub forks](https://img.shields.io/github/forks/KumarAmrit30/textlens-ocr?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/KumarAmrit30/textlens-ocr?style=social)
+1. Search existing [GitHub Issues](https://github.com/KumarAmrit30/textlens-ocr/issues)
+2. Create a new issue with detailed information
 
 ---
 
-<div align="center">
-
-**Made with ❤️ for the AI community**
-
-[⭐ Star this repo](https://github.com/KumarAmrit30/textlens-ocr) • [🔗 Try the demo](https://huggingface.co/spaces/GoConqurer/textlens-ocr) • [📖 Read docs](DEPLOYMENT.md)
-
-</div>
+**⭐ If you find TextLens useful, please give it a star on GitHub!**
