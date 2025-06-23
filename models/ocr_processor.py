@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 class OCRProcessor:
     """Vision-Language Model based OCR processor using Florence-2."""
     
-    def __init__(self, model_name: str = "microsoft/Florence-2-base"):
+    def __init__(self, model_name: str = "microsoft/Florence-2-large"):
         self.model_name = model_name
         self.model = None
         self.processor = None
