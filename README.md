@@ -16,7 +16,7 @@ license: mit
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-green)](https://github.com/KumarAmrit30/textlens-ocr)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![Gradio](https://img.shields.io/badge/gradio-4.44+-orange.svg)](https://gradio.app/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
 A modern OCR (Optical Character Recognition) application powered by Microsoft's Florence-2 Vision-Language Model. Built with Gradio for an intuitive web interface, TextLens extracts text from images with high accuracy and supports multiple input methods.
 
